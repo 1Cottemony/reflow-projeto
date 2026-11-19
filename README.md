@@ -62,25 +62,6 @@ src/
 - **Laboratórios** usam `@container` (também `min-width`) porque a moldura de demonstração é uma caixa dentro da página, não a janela.
 - Respeita `prefers-reduced-motion`.
 
-## Publicar (Vercel)
-
-1. **Subir para o GitHub.** Crie um repositório vazio em github.com (botão "New repository", sem README). Na pasta do projeto:
-   ```bash
-   git init
-   git add .
-   git commit -m "Primeira versão do guia reflow"
-   git branch -M main
-   git remote add origin https://github.com/SEU-USUARIO/reflow.git
-   git push -u origin main
-   ```
-   Adicione o colega em Settings → Collaborators.
-2. **Publicar.** Em vercel.com, entre com a conta do GitHub, clique em **Add New → Project**, escolha o repositório e clique em **Deploy**. O Vercel reconhece o Vite sozinho (build `npm run build`, saída `dist`).
-3. **Se o build falhar por versão do Node:** no projeto do Vercel, Settings → General → Node.js Version → escolha 22.x e faça um novo deploy.
-4. **Conferir.** Abra o link no celular, navegue pelas seções e, **atualizando a página dentro de `/unidades`**, confira que não aparece erro 404 (isso é o que o `vercel.json` resolve).
-5. Cole o link do site no topo deste README e faça `git add . && git commit -m "Link do site" && git push`.
-
-Cada `git push` publica uma nova versão automaticamente.
-
 ## Como foi verificado
 
 O build (`npm run build`) passa sem erros. Em Chrome headless foram testadas 8 rotas em 9 larguras (320, 360, 375, 390, 430, 768, 1024, 1280 e 1440px): sem rolagem horizontal, sem conteúdo vazando e sem erros no console. Menu, laboratórios e Desafio foram exercitados por script. **Ainda não foi testado em celular físico** nem em Safari/Firefox.
